@@ -20,13 +20,29 @@ int main() {
     return 0;
 }
 ```
-
 Este código define a cor do texto usando sequências de escape ANSI antes de imprimir o texto e, em seguida, restaura a cor padrão após a impressão. 
-#
-Algumas sequências de escape ANSI que você pode testar:
 
+## Sintaxe
 
-- **Cores do texto:**
+- **Início e Fim:**
+  
+    Toda sequência ANSI começa com `\33[` e termina com `m`
+
+- **Estilo do texto**
+  
+    O primeiro campo da sequência é utilizado para definir o estilo do texto.
+      `\33[xm;`. Alterando o valor de x, podemos alterar o estilo do texto. Abaixo estão as opções de formatação de estilo.
+
+  - `\33[0;` : Estilo normal
+  - `\33[1;` : Negrito
+  - `\33[4;` : Sublinhado
+  - `\33[7;` : Negativo (inverte as cores do fundo e texto)
+  - `\33[5;` : Piscante
+  
+- **Cor do texto**
+
+  O segundo campo da sequência é utilizado para definir a cor do texto.
+  `\33[x;ym`. Alterando o valor de y, podemos alterar a cor do texto. Abaixo estão as opções de formatação de cores do texto
 
   - `\033[0;30m` Preto
   - `\033[0;31m` Vermelho
@@ -37,7 +53,10 @@ Algumas sequências de escape ANSI que você pode testar:
   - `\033[0;36m` Ciano (Azul claro)
   - `\033[0;37m` Branco
 
-- **Cores de fundo:**
+- **Cor do fundo**
+
+  O terceiro campo da sequência é utilizado para definir a cor do fundo.
+  `\33[x;y;zm`. Alterando o valor de z, podemos alterar a cor do fundo. Abaixo estão as opções de formatação de cores do fundo
 
   - `\033[0;40m` Fundo preto
   - `\033[0;41m` Fundo vermelho
@@ -47,12 +66,7 @@ Algumas sequências de escape ANSI que você pode testar:
   - `\033[0;45m` Fundo magenta (Roxo)
   - `\033[0;46m` Fundo ciano (Azul claro)
   - `\033[0;47m` Fundo branco
-    
-- **Outras opções:**
-  - `\033[1m` Negrito
-  - `\033[4m` Sublinhado
-  - `\033[7m` Reverso (inverte a cor do texto e do fundo)
-  - `\033[0m` Restaura as configurações padrão de cor e estilo
+
 #
 Você pode combinar essas sequências de escape ANSI para criar diferentes estilos de texto e fundo. Por exemplo:
 
@@ -69,6 +83,7 @@ int main() {
     return 0;
 }
 ```
+
 ## ⚠️ Atenção!
 A eficácia dessas sequências de escape depende da capacidade do console em interpretá-las corretamente.
 
