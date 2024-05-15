@@ -58,14 +58,14 @@ Este código define a cor do texto usando sequências de escape ANSI antes de im
   O terceiro campo da sequência é utilizado para definir a cor do fundo.
   `\33[x;y;zm`. Alterando o valor de z, podemos alterar a cor do fundo. Abaixo estão as opções de formatação de cores do fundo
 
-  - `\033[0;40m` Fundo preto
-  - `\033[0;41m` Fundo vermelho
-  - `\033[0;42m` Fundo verde
-  - `\033[0;43m` Fundo amarelo
-  - `\033[0;44m` Fundo azul
-  - `\033[0;45m` Fundo magenta (Roxo)
-  - `\033[0;46m` Fundo ciano (Azul claro)
-  - `\033[0;47m` Fundo branco
+  - `\033[0;37;40m` Fundo preto
+  - `\033[0;37;41m` Fundo vermelho
+  - `\033[0;37;42m` Fundo verde
+  - `\033[0;37;43m` Fundo amarelo
+  - `\033[0;37;44m` Fundo azul
+  - `\033[0;37;45m` Fundo magenta (Roxo)
+  - `\033[0;37;46m` Fundo ciano (Azul claro)
+  - `\033[0;37;47m` Fundo branco
 
 #
 Você pode combinar essas sequências de escape ANSI para criar diferentes estilos de texto e fundo. Por exemplo:
